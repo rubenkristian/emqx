@@ -65,7 +65,9 @@
           %% Message Payload
           payload :: binary(),
           %% Timestamp
-          timestamp :: erlang:timestamp()
+          timestamp :: erlang:timestamp(),
+          %% shared dispatch ack fun
+          shared_dispatch_ack = no_ack :: no_ack | {pid(), reference()}
         }).
 
 -record(delivery, {
